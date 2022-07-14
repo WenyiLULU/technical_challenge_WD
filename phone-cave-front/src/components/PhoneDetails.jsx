@@ -2,7 +2,7 @@ import axios from "axios"
 import { useEffect, useState } from "react";
 
 const PhoneDetails = ({showDetails, phoneId}) => {
-    const [phone, setPhone] = useState()
+    const [phone, setPhone] = useState("")
     const [fetching, setFetching] = useState(true)
 
     const fetchPhone = async ()=>{
