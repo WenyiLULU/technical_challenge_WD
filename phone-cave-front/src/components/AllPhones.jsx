@@ -1,4 +1,4 @@
-import { Loader, SimpleGrid } from "@mantine/core"
+import { Center, Loader, SimpleGrid } from "@mantine/core"
 import { useEffect, useState } from "react";
 
 import axios from "axios";
@@ -23,7 +23,7 @@ const AllPhones = () => {
     return ( 
         fetching ? <Loader /> 
         :<div>
-        <PhoneDetails showDetails={showDetails} phoneId={phoneId} />
+        <Center style={{width:"60vw", margin:"20px"}}><PhoneDetails showDetails={showDetails} phoneId={phoneId} /></Center>
 
         <SimpleGrid
         breakpoints={[
@@ -44,7 +44,7 @@ const AllPhones = () => {
                 <button onClick={()=>{
                     setShowDetails("block")
                     setPhoneId(phone.id)
-                    console.log(phoneId)
+                    //console.log(phoneId)
                 }}>more details</button>
                 <button onClick={()=>{
                     setShowDetails("none") 

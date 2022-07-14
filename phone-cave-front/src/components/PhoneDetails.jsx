@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react";
+import { Loader } from "@mantine/core"
 
 const PhoneDetails = ({showDetails, phoneId}) => {
     const [phone, setPhone] = useState("")
@@ -15,8 +16,9 @@ const PhoneDetails = ({showDetails, phoneId}) => {
         fetchPhone()
     },[phoneId])
     return ( 
-        <div style={{display: showDetails, width:"60%", margin:"20 auto"}}>
-            <div>Details of {phone.name}</div>
+        fetching ? <Loader /> 
+        :<div style={{display: showDetails}}>
+            <div><strong>Details of {phone.name}</strong></div>
             <div>{phone.description}</div>
         </div>
      );
